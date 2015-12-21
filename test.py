@@ -4,7 +4,13 @@ from RSA import algs
 import pprint
 pp = pprint.PrettyPrinter(indent=2, width=100)
 
-a = AbonentRSA('Alice', 1024)
-b = AbonentRSA('Bob', 2048)
-pp.pprint(a.getCertificate())
+alice = AbonentRSA('Alice', 1024)
+bob = AbonentRSA('Bob', 1024)
+certAlice = alice.getCertificate()
+certBob = bob.getCertificate()
 
+request = alice.generateKeyToAbonent(256, certBob)
+
+obtained = bob.obtainKey(request, certAlice)
+
+pp.pprint(obtained)
