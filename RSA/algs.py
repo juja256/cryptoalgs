@@ -1,6 +1,6 @@
 import random
 
-K = 5
+K = 10
 
 
 def extended_euclid(a, b):
@@ -58,13 +58,13 @@ def select_prime(a, b):
     return None
 
 
-def hex_repr(a, n, s=False):
+def hex_repr(a, n, s=True):
     if type(a) == int:
         a = a.to_bytes(n // 8, 'big')
     if s:
-        return ("".join("{:02X}".format(c) for c in a))#.encode('utf-8')
+        return ("".join("{:02X}".format(c) for c in a))  # .encode('utf-8')
     else:
-        return (" ".join("{:02X}".format(c) for c in a))#.encode('utf-8')
+        return (" ".join("{:02X}".format(c) for c in a))  # .encode('utf-8')
 
 
 def int_repr(a):
