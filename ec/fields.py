@@ -32,7 +32,7 @@ class FieldElement:
         if poly is None:
             return FieldElement(algs.extended_euclid_int(self.__el, char)[1], self.__field)  
         else:
-            return FieldElement(algs.extended_euclid_poly(self.__el, poly, char)[1], self.__field)
+            return FieldElement(algs.P.polydiv(algs.P.polypow(self.__el, char**ext - 2), poly)[1] % char, self.__field)
 
 
 class Field:
@@ -57,7 +57,7 @@ class Field:
                 # print(i)
                 oldest = np.array([1])
                 poly_candidate = np.concatenate((rd, oldest))
-                print(poly_candidate)
+                #print(poly_candidate)
                 if algs.berlekampTest(char, poly_candidate):
                     self.__poly = poly_candidate
                     break

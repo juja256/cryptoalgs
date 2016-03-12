@@ -24,6 +24,13 @@ char, ext, poly = field1.getDescription()
 print("GF(", char, "^", ext, ") Polynome:", poly)
 
 elements = field1.getElements()
+
+print("Zero:")
+print(field1.getZero())
+
+print("Unity:")
+print(field1.getUnity())
+
 print("Adding Table:")
 for element in elements:
     print(" ".join([str(x + element) for x in elements]))
@@ -37,3 +44,4 @@ print("\n".join(["{0}: {1}".format(x, x.inverseAdd()) for x in elements]))
 
 print("Inversing Mul Test")
 print("\n".join(["{0}: {1}".format(x, x.inverseMul()) for x in elements]))
+

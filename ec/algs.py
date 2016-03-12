@@ -57,5 +57,6 @@ def egcd(a, b, p):
     return gcd, x, y
 
 #print(berlekampTest(2, [0,1,1]))
-print(extended_euclid_poly(np.array([1, 0, 1]), np.array([1, 0, 1, 1]), 2))
-print(egcd(np.array([1, 0, 1]), np.array([1, 0, 1, 1]), 2))
+#print(extended_euclid_poly(np.array([1, 0, 1]), np.array([1, 0, 1, 1]), 2))
+#print(egcd(np.array([1, 0, 1]), np.array([1, 0, 1, 1]), 2))
+#print(P.polydiv(P.polypow(np.array([1, 1, 1]), 6), np.array([1, 0, 1, 1]))[1] % 2)
