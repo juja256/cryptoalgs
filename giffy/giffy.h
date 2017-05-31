@@ -13,4 +13,5 @@ public:
 	
 	bool Pop();
 	BooleanVector GenerateGamma(u32 size);
+	void SetRegister(const BooleanVector& vec, u32 number);
 };

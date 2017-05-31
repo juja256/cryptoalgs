@@ -12,6 +12,7 @@ public:
 	~LinearFeedbackRegister();
 	
 	void SetSeed(u32 s);
+	void SetSeed(const BooleanVector& v);
 	void IncSeed();
 	bool Pop();
 	BooleanVector* GenerateGamma(u64 s, BooleanVector* v);

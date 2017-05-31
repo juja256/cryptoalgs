@@ -37,6 +37,10 @@ void LinearFeedbackRegister::SetSeed(u32 s) {
 	state = BooleanVector(s);
 }
 
+void LinearFeedbackRegister::SetSeed(const BooleanVector& v) {
+	state = v;
+}
+
 void LinearFeedbackRegister::IncSeed() {
 	++state;
 }

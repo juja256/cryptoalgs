@@ -32,6 +32,6 @@ BooleanVector GiffyGenerator::GenerateGamma(u32 size) {
 	return gamma;
 }
 
-//LFR GiffyGenerator::GetRegister(u32 i) {
-//	return l[i];
-//}
+void GiffyGenerator::SetRegister(const BooleanVector& vec, u32 i) {
+	l[i].SetSeed(vec);
+}
