@@ -1,0 +1,179 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{wrapfig}
+\usepackage[section]{placeins}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{placeins}
+%\usepackage{indentfirst}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm,
+ }
+\usepackage{mathtools}
+\usepackage{graphicx}
+\title{{\color{MidnightBlue}\textbf{Розрахункова робота з фізики}}}
+\author{{\color{Sepia}\textit{Грубіян Євген, ФІ-32}}}
+\date{Варіант 2-5}
+\begin{document}
+\maketitle
+\section*{Початкові дані}
+\begin{wrapfigure}{l}{0.2\textwidth}
+  \begin{center}
+    \includegraphics[width=0.18\textwidth]{rlc.png}
+  \end{center}
+\end{wrapfigure}
+Дано послідовне RLC-коло:\\
+\medskip
+\( \omega_0 = 7.4 * 10^3c^{-1} \) \newline
+\medskip
+\( R = 17.6 Om\) \\
+\medskip
+\( R_{crit} = 67 Om \) \\
+\medskip
+\( \nu = 1.1 kHz\) \\
+\medskip
+\( \epsilon_0 = 4.3 V \) \\
+\medskip
+\( \epsilon = \epsilon_{0}cos(2\omega t)\)
+\section*{Завдання 1}
+\( R_{crit} = 2\sqrt{\dfrac{L}{C}}; \omega_0=\dfrac{1}{\sqrt{LC}}\) \\
+\medskip
+\( L = \dfrac{R_{crit}}{2\omega_0} = 4.53 * 10^{-3} H; C = \dfrac{1}{L\omega_0^2} = 4.03 * 10^{-6} F;\) \\ 
+\medskip 
+\( \gamma = \dfrac{R}{2L} = 1.94 * 10^3 Om/H; Q = \dfrac{\omega_0}{2\gamma} = 1,907 \) \\
+\newline
+\newline
+\newline
+\section*{Завдання 2}
+\hspace*{\parindent}За законами Кіргофа маємо:
+\[ \epsilon + \epsilon_i = IR + U_c \]
+\[ \epsilon - L\dfrac{dI}{dt} = IR + \dfrac{Q}{C} \]
+\[ q'' + 2\gamma q' + \omega_0 q = \dfrac{\epsilon}{L} \]
+\hspace*{\parindent}Диференціальне рівняння RLC-кола з генератором для заряду має вигляд:
+\[ q'' + 2\gamma q' + \omega_0 q = \dfrac{\epsilon_0}{L}cos(\omega t) \]
+\section*{Завдання 3}
+\hspace*{\parindent}Нас цікавить частковий розв'язок рівняння, тобто такий за якого коливання встановились. Він має вигляд:
+\[ q = Acos(\omega t -\phi) \]
+\hspace*{\parindent}Сила струму і друга похідні будуть мати вигляд:
+\[ I = q' = A\omega cos(\omega t -\phi + \pi /2) \]
+\[ q'' = A\omega^2 cos(\omega t -\phi + \pi ) \]
+\hspace*{\parindent}Підставляючи отримані вирази в рівняння будемо мати:
+\[ \omega^2 cos(\omega t - \phi + \pi ) + 2\gamma \omega cos(\omega t - \phi /2 ) + \omega_0^2 cos(\omega t - \phi) = \dfrac{\epsilon_0}{LA}cos(\omega t) \]
+\hspace*{\parindent}З векторної діаграми складеної за попереднім рівнянням отримуємо:
+\[ I_{0}(\omega) = A(\omega)\omega = \frac{\epsilon_{0}\omega}{L\sqrt{(\omega_{0}^2 - \omega^2)^2 + 4\gamma^2\omega^2}} \]
+\section*{Завдання 4}
+\hspace*{\parindent}Відомо що у випадку резонансу частота коливань струму в генераторі співпадає з власною частотою контуру, тобто: 
+\[ \omega_{res} = \omega_0 = 7400c^{-1} \]
+\hspace*{\parindent}А сила струму: \[ I_0(\omega_0) = \dfrac{\epsilon_0}{R} = 0.24 A\]
+\section*{Завдання 5}
+\hspace*{\parindent}Формула для обчислення амплітудного струму в залежності від циклічної частоти:  \[ I_{0}(\omega) = \frac{\epsilon_{0}\omega}{L\sqrt{(\omega_{0}^2 - \omega^2)^2 + 4\gamma^2\omega^2}} \]
+\hspace*{\parindent}Таблиця значень від 0 до \( 2\omega_0 \) : \newline
+\vspace{0.1cm}
+\newline
+\begin{tabular}{| l | *{10}{ c |} }
+  \hline
+  \( \omega \) & 0 & 740 & 1480 & 2220 & 2960 & 3700 & 4440 & 5180 & 5920 & 6660\\
+  \hline
+  \( I \) & 0.00 & 0.01 & 0.03 & 0.04 & 0.06 & 0.08 & 0.11 & 0.14 & 0.19 & 0.23 \\
+  \hline
+\end{tabular}
+\newline
+\vspace{0.5cm}
+\newline
+\begin{tabular}{| l | *{10}{ c |} }
+  \hline
+  \( \omega \) & 7400 & 8140 & 8880 & 9620 & 10360 & 11100 & 11840 & 12580 & 13320 & 14060\\
+  \hline
+  \( I \) & 0.24 & 0.23 & 0.20 & 0.17 & 0.15 & 0.13 & 0.12 & 0.10 & 0.09 & 0.09 \\
+\hline
+\end{tabular}
+\newline
+\vspace{0.5cm}
+\newline
+\( \omega_{res} = \omega_0 = 7400 c^{-1} \) \\
+\( I_{max} = 0.24 A \)
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{5.png}
+\end{figure}
+\section*{Завдання 6}
+\hspace*{\parindent}Експерментально, якщо \( I = I_{0max}/\sqrt{2}\), то \( \omega_1=9600c^{-1}; \omega_2=5700c^{-1}; \Delta \omega = 3900c^{-1}; \)
+\[ Q_{exp} = \omega_0 / \Delta \omega = 1.897 \]
+\[ \eta = | Q_{exp} - Q |*100\% =1\% \]
+\section*{Завдання 7}
+\[\omega = 2 \pi \nu = 6912c^{-1} \]
+\[ Z(\omega) = \sqrt{R^2 + (\omega L - \dfrac{1}{\omega C})^2} = 18.19 Om \]
+\hspace*{\parindent}
+\section*{Завдання 8}
+\[ \phi = arctg(\dfrac{\omega L - 1/(\omega C)}{R}) = -0.26 rad = -14.63^o \]
+\section*{Завдання 9}
+\[ I_e = I_{0max}/\sqrt{2} = 0.17; \epsilon_e = \epsilon_0/\sqrt{2} \]
+\[ \langle P \rangle = I_e \epsilon_e cos(\phi) = 0.51 W \]
+\section*{Завдання 10}
+\setlength{\unitlength}{1mm}
+\begin{picture}(160,160)
+\thicklines
+\put(20,80){\vector(0,1){74}}
+\put(20,80){\vector(0,-1){85}}
+\put(20,80){\vector(1,0){41.6}}
+\put(20,80){\vector(4,-1){41.5}}
+\put(23, 150){$U_L = 7.41 V$ }
+\put(23, -2){$U_C = 8.5 V$ }
+\put(23, 60){$U_L-U_C = 1.08 V $}
+\put(40, 84){$ IR=4.17 V $}
+\put(64, 75){$ \epsilon = 4.3 V $}
+\put(20,80){\vector(0,-1){10.1}}
+\thinlines
+\put(20,80){\vector(1,0){120}}
+\end{picture}\newline
+\vspace{1cm}
+\newline
+Таким чином коло є ємнісним навантаженням для генератора, оскільки \( U_C > U_L \)
+\section*{Завдання 11}
+\[ U_c = IZ_c = I/(\omega C) = \dfrac{\epsilon_0}{\omega C \sqrt{R^2+(\omega L - 1/(\omega C))^2 }} = \dfrac{\epsilon_0 \omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 +4 \gamma^2 \omega}} \]
+\section*{Завдання 12}
+\hspace*{\parindent}Необхідно знайти максимальне значення для \(U_c\), а отже мінімальне для його знаменника \( \omega C \sqrt{ R^2 + (\omega L - 1/(\omega C))^2 }  \)
+Взявши похідну від цього виразу і прирівнюючи її до 0 будемо мати: 
+\[ 2\omega R^2 C^2 + 4\omega^3 L^2 C^2 - 4\omega LC = 0\]
+\[ 2\omega^2 L^2 C = 2L - R^2 C \]
+\[ \omega_{C_{res}} = \sqrt{\omega_0^2 - 2\gamma^2} = 6871 c^{-1}\]
+\hspace*{\parindent}При цьому напруга на конденсаторі:
+\[ U_{C_{res}} = \dfrac{\epsilon_0 \omega_0^2}{2\gamma \sqrt{\omega_0^2 - \gamma^2}} = 8.49 V\]
+\[ \eta =  \dfrac{|\omega_0 - \omega_{C_{res}}|}{\omega_0} * 100\% =  7.15\%\]
+\section*{Завдання 13} 
+\hspace*{\parindent}Таблиця значень \(U_C\) від 0 до \( 2\omega_0 \) : \newline
+\vspace{0.1cm}
+\newline
+\begin{tabular}{| l | *{10}{ c |} }
+  \hline
+  \( \omega \) & 0 & 740 & 1480 & 2220 & 2960 & 3700 & 4440 & 5180 & 5920 & 6660\\
+  \hline
+  \( U_c \) & 4.30 & 4.34 & 4.45 & 4.66 & 4.97 & 5.41 & 6.03 & 6.84 & 7.77 & 8.44 \\
+  \hline
+\end{tabular}
+\newline
+\vspace{0.5cm}
+\newline
+\begin{tabular}{| l | *{10}{ c |} }
+  \hline
+  \( \omega \) & 7400 & 8140 & 8880 & 9620 & 10360 & 11100 & 11840 & 12580 & 13320 & 14060\\
+  \hline
+  \( U_c \) & 8.19 & 7.00 & 5.60 & 4.43 & 3.56 & 2.91 & 2.43 & 2.06 & 1.77 & 1.54 \\
+\hline
+\end{tabular}
+\newline
+%\vspace{0.5cm}
+%\newline
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{6.png}
+\end{figure}
+\section*{Завдання 14}
+\[ Q_{exp} = U_{C_{res}}/\epsilon_0 = 1.97 \]
+\[ \eta = \dfrac{Q_{exp} - Q}{Q} * 100\% = 3.66\% \]
+\end{document}
